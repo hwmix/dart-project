@@ -7,6 +7,6 @@ Map<String, dynamic> createUser(String name, int age, {bool isActive = true}) {
 }
 
 void main() {
-  var user = createUser("Alice", 25);
+  var user = createUser("Mix", 21);
   print(user);
 }
