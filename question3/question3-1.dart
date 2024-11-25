@@ -1,3 +1,5 @@
+import 'dart:io';
+
 int maxNumber(List<int> numbers) {
   if (numbers.isEmpty) {
     throw Exception("The list is empty");
@@ -6,6 +8,13 @@ int maxNumber(List<int> numbers) {
 }
 
 void main() {
-  List<int> nums = [3, 7, 2, 9, 5];
-  print("ตัวเลขที่มากที่สุดคือ: ${maxNumber(nums)}");
+  stdout.write("กรอกตัวเลข (แยกด้วยช่องว่าง): ");
+  List<String> input = stdin.readLineSync()!.split(' ');
+  List<int> nums = input.map((e) => int.parse(e)).toList();
+  try {
+    int max = maxNumber(nums);
+    print("ตัวเลขที่มากที่สุดคือ: $max");
+  } catch (e) {
+    print(e);
+  }
 }
