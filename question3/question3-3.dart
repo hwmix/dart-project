@@ -18,7 +18,6 @@ void main() {
     return;
   }
 
-  // รับค่าอายุจากผู้ใช้
   print('กรุณากรอกอายุ:');
   int? age = int.tryParse(stdin.readLineSync()!);
 
@@ -27,15 +26,12 @@ void main() {
     return;
   }
 
-  // ถามผู้ใช้ว่าต้องการให้ isActive เป็น true หรือ false
   print('บัญชีนี้ใช้งานอยู่หรือไม่? (yes/no, ค่าเริ่มต้น: yes):');
   String? isActiveInput = stdin.readLineSync()?.toLowerCase();
   bool isActive = (isActiveInput == null || isActiveInput == 'yes');
 
-  // สร้างผู้ใช้โดยใช้ฟังก์ชัน createUser
   Map<String, dynamic> user = createUser(name, age, isActive: isActive);
 
-  // แสดงข้อมูลผู้ใช้
   print('ข้อมูลผู้ใช้ที่สร้าง:');
   print(user);
 }
